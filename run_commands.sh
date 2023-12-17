@@ -29,7 +29,13 @@ DB_USERNAME=postgres DB_PASSWORD=NL944Hzz98 python app.py
 # Expose the Backend API to the Internet
 kubectl expose deployment backend-coworking --type=LoadBalancer --name=publicbackend
 
-kubectl exec --stdin --tty postgres-postgresql-0 -- /bin/bash
+# Check api 
+curl a1679de6d91314472b63161adbc257bc-1963740532.us-east-1.elb.amazonaws.com:5153/api/reports/daily_usage
+curl a1679de6d91314472b63161adbc257bc-1963740532.us-east-1.elb.amazonaws.com:5153/api/reports/user_visits
+curl a1679de6d91314472b63161adbc257bc-1963740532.us-east-1.elb.amazonaws.com:5153/readiness_check
+curl a1679de6d91314472b63161adbc257bc-1963740532.us-east-1.elb.amazonaws.com:5153/health_check
+
+kubectl exec --stdin --tty backend-coworking-679ccdfc4f-xlplm  -- /bin/bash
 
 ClusterName=hieuvm5-cluster
 RegionName=us-east-1
