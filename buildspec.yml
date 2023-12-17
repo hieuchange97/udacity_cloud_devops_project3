@@ -12,7 +12,7 @@ phases:
     commands:
       - echo Build stagte is starting at `date`
       - echo Building the Docker image...
-      - docker build --build-arg DB_USERNAME=postgres --build-arg DB_PASSWORD=bimzKB9NH1 -t $IMAGE_REPO_NAME:$CODE_BUILD_NUMBER ./analytics/.
+      - docker build --build-arg DB_USERNAME=postgres --build-arg DB_PASSWORD=3Tje0Bfvhm -t $IMAGE_REPO_NAME:$CODE_BUILD_NUMBER ./analytics/.
       - docker tag $IMAGE_REPO_NAME:$CODE_BUILD_NUMBER $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$CODE_BUILD_NUMBER
       - echo Build stage is completed at `date`
   post_build:
